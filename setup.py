@@ -40,6 +40,7 @@ def _get_plugin_version_dict():
 # require a compatible minor version (~=), prerelease if this is a prerelease
 def _get_dbt_core_version():
     parts = _get_plugin_version_dict()
+    B
     minor = "{major}.{minor}.0".format(**parts)
     pre = (parts["prekind"]+"1" if parts["prekind"] else "")
     return f"{minor}{pre}"
@@ -61,7 +62,7 @@ setup(
     author_email="innovation-feedback@cloudera.com",
     url="https://github.com/cloudera/dbt-impala",
     packages=find_namespace_packages(include=['dbt', 'dbt.*']),
-    data_files=[('', ['dbt/adapters/impala/.env'])],
+    #idata_files=[('', ['dbt/adapters/impala/.env'])],
     include_package_data=True,
     install_requires=[
         'dbt-core~={}'.format(dbt_core_version),
